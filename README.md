@@ -14,6 +14,11 @@ Dependencies
 
         brew install opam
 
+ * MLKit, install via [mlkit](https://elsman.com/mlkit/), install
+   `mlkit` via brew on macOS:
+
+        brew install mlkit
+
  * [hyperfine](https://github.com/sharkdp/hyperfine) for benchmarking,
    install via brew on macOS:
 
@@ -23,7 +28,7 @@ Dependencies
 Build and run benchmarks
 ------------------------
 
-There is a `Makefile` that build the various binaries and runs
+There is a `Makefile` that builds the various binaries and runs
 `hyperfine`, run the benchmarks with:
 
     make bench
