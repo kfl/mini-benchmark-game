@@ -5,7 +5,7 @@
  * Modified by Fabrice Le Fessant
  * Adapted to SML by Martin Elsman
  *)
-
+local
 datatype tree = Empty | Node of tree * tree
 
 fun make d =
@@ -47,12 +47,13 @@ fun loop_depths d =
             in for (1,niter)
                    (fn i => c := !c + check(make d))
              ; print (Int.toString niter ^ "\t trees of depth " ^
-                      Int.toString i ^ "\t check: " ^
+                      Int.toString d ^ "\t check: " ^
                       Int.toString (!c) ^ "\n")
             end)
-
+in
 val () =
     ( loop_depths min_depth
     ; print ("long lived tree of depth " ^ Int.toString max_depth ^
              "\t check: " ^ Int.toString (check long_lived_tree) ^ "\n")
     )
+end
