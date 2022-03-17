@@ -8,7 +8,7 @@ BINS=./bin/rust-bintrees ./bin/rust-bintrees-typed-arena \
 all: ${BINS}
 
 .PHONY: clean
-clean: bin-clean rust-clean ocaml-clean
+clean: bin-clean rust-clean ocaml-clean mlkit-clean
 
 .PHONY: bench
 bench: ${BINS}

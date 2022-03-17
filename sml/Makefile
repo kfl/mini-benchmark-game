@@ -1,5 +1,5 @@
 
-MLCOMP?=mlkit
+MLCOMP?=mlkit -no_gc
 ARG?=17
 
 .PHONY: all

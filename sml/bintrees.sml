@@ -35,8 +35,11 @@ val () =
 val long_lived_tree = make max_depth
 
 fun for (s,e) f =
-    if s > e then ()
-    else (f s ; for (s+1,e) f)
+    let fun loop s =
+            if s > e then ()
+            else (f s ; loop (s+1))
+    in loop s
+    end
 
 fun loop_depths d =
     for (0,((max_depth - d) div 2 + 1) - 1)
