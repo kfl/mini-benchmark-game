@@ -7,12 +7,9 @@ struct Tree<'a> {
 type TreeRef<'a> = Option<&'a Tree<'a>>;
 
 fn check(t: &TreeRef) -> i64 {
-    match t {
+    match *t {
         None => 0,
-        Some(boxed) => {
-            let Tree{ref l, ref r} = **boxed;
-            1 + check(l) + check(r)
-        }
+        Some(&Tree { ref l, ref r }) => 1 + check(l) + check(r),
     }
 }
 
